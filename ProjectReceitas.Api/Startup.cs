@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProjectReceitas.Api.Security;
 using ProjectReceitas.Data.Context;
 using ProjectReceitas.Data.Repository;
@@ -34,7 +36,8 @@ namespace ProjectReceitas.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(Configuration["ConnectionString:ProjectReceitasBd"], b => b.MigrationsAssembly("ProjectReceitas.Api")));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                              .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>

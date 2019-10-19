@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using ProjectReceitas.Data.Context;
 using ProjectReceitas.Domain.Domain;
 using ProjectReceitas.Service.Service.Interface;
