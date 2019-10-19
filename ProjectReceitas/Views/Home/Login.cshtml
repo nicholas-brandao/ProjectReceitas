@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="col-md-6">
+    <h1>@ViewData["Title"]</h1>
+    <form>
+        <div class="form-group">
+            <label for="txtEmail">Endereço de Email</label>
+            <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Email">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com mais ninguém.</small>
+        </div>
+        <div class="form-group">
+            <label for="txtSenha">Senha</label>
+            <input type="password" class="form-control" id="txtSenha" placeholder="Senha">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="lblLembrar">
+            <label class="form-check-label" for="lblLembrar">Lembrar-me</label>
+        </div>
+        <button type="button" id="btnEntrar" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script src="~/js/Login/index.js"></script>
+}
+
