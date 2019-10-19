@@ -16,6 +16,8 @@ namespace ProjectReceitas.Data.Mapping
 
             builder.HasKey(c => c.Id);
 
+            builder.Property(c => c.Id).ValueGeneratedOnAdd();
+
             builder.Property(c => c.Descricao)
                 .IsRequired()
                 .HasColumnName("Descricao");
@@ -23,7 +25,7 @@ namespace ProjectReceitas.Data.Mapping
             builder.Property(c => c.Receita)
                 .IsRequired();
 
-            builder.HasOne(c => c.Receita).WithMany(e => e.ModoPreparos);
+            builder.HasOne(c => c.Receita).WithMany(e => e.ModosPreparo);
         }
     }
 }

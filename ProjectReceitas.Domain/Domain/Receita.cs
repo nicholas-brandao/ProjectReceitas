@@ -13,6 +13,6 @@ namespace ProjectReceitas.Domain.Domain
         public int Rendimento { get; set; }
 
         public ICollection<ReceitaIngrediente> Ingredientes { get; set; }
-        public ICollection<ReceitaModoPreparo> ModoPreparos { get; set; }
+        public ICollection<ReceitaModoPreparo> ModosPreparo { get; set; }
     }
 }

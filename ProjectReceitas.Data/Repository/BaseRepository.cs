@@ -25,6 +25,7 @@ namespace ProjectReceitas.Data.Repository
             var entry = this.context.Entry(obj);
             this.dbSet.Add(obj);
             entry.State = EntityState.Added;
+            context.SaveChanges();
 
         }
 
@@ -33,6 +34,7 @@ namespace ProjectReceitas.Data.Repository
             var entry = this.context.Entry(obj);
             this.dbSet.Attach(obj);
             entry.State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         public virtual T ObterPorId(int id)
@@ -76,6 +78,7 @@ namespace ProjectReceitas.Data.Repository
             var entry = this.context.Entry(obj);
             this.dbSet.Remove(obj);
             entry.State = EntityState.Deleted;
+            context.SaveChanges();
         }
     }
 }

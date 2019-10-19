@@ -16,6 +16,8 @@ namespace ProjectReceitas.Data.Mapping
 
             builder.HasKey(c => c.Id);
 
+            builder.Property(c => c.Id).ValueGeneratedOnAdd();
+
             builder.Property(c => c.Nome)
                 .IsRequired()
                 .HasColumnName("Nome");
