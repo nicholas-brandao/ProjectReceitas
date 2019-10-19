@@ -94,12 +94,16 @@ namespace ProjectReceitas.Api
                 app.UseHsts();
             }
 
-           
+            app.UseCors(options =>
+            {
+                options.WithOrigins("*").WithMethods("GET", "POST", "DELETE", "PUT", "PATCH")
+                .AllowAnyHeader()
+                .AllowCredentials();
+            });
 
             app.UseAuthentication();
             app.UseMvc();
 
-            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

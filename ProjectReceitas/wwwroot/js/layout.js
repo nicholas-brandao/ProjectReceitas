@@ -8,7 +8,7 @@
         beforeSend: function () {
             $.blockUI({
                 baseZ: 9999999999999,
-                message: '<img src="img/loading.gif" />',
+                message: '<img src="/img/loading.gif" />',
                 css: { backgroundColor: 'transparent', border: 'none' }
             });
         },
@@ -33,7 +33,7 @@ function postData(url, data, fnRetorno, async, errMessage) {
         beforeSend: function () {
             $.blockUI({
                 baseZ: 9999999999999,
-                message: '<img src="img/loading.gif" />',
+                message: '<img src="/img/loading.gif" />',
                 css: { backgroundColor: 'transparent', border: 'none' }
             });
         },
@@ -63,7 +63,7 @@ function postFormData(url, data, fnRetorno, async, errMessage) {
         beforeSend: function () {
             $.blockUI({
                 baseZ: 9999999999999,
-                message: '<img src="img/loading.gif" />',
+                message: '<img src="/img/loading.gif" />',
                 css: { backgroundColor: 'transparent', border: 'none' }
             });
         },
