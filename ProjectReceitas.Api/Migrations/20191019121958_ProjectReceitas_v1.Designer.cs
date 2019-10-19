@@ -10,8 +10,8 @@ using ProjectReceitas.Data.Context;
 namespace ProjectReceitas.Api.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20191019024229_ProjectReceitas")]
-    partial class ProjectReceitas
+    [Migration("20191019121958_ProjectReceitas_v1")]
+    partial class ProjectReceitas_v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,6 +93,36 @@ namespace ProjectReceitas.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Login = "Nicholas",
+                            Nome = "Nicholas",
+                            Senha = "123"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Login = "Andre",
+                            Nome = "Andre",
+                            Senha = "123"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Login = "Wallace",
+                            Nome = "Wallace",
+                            Senha = "123"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Login = "Moraes",
+                            Nome = "Moraes",
+                            Senha = "123"
+                        });
                 });
 
             modelBuilder.Entity("ProjectReceitas.Domain.Domain.ReceitaIngrediente", b =>

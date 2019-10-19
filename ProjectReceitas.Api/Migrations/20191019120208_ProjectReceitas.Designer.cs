@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectReceitas.Data.Context;
 
 namespace ProjectReceitas.Api.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    partial class SqlServerContextModelSnapshot : ModelSnapshot
+    [Migration("20191019120208_ProjectReceitas")]
+    partial class ProjectReceitas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,36 +93,6 @@ namespace ProjectReceitas.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuario");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Login = "Nicholas",
-                            Nome = "Nicholas",
-                            Senha = "123"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Login = "Andre",
-                            Nome = "Andre",
-                            Senha = "123"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Login = "Wallace",
-                            Nome = "Wallace",
-                            Senha = "123"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Login = "Moraes",
-                            Nome = "Moraes",
-                            Senha = "123"
-                        });
                 });
 
             modelBuilder.Entity("ProjectReceitas.Domain.Domain.ReceitaIngrediente", b =>

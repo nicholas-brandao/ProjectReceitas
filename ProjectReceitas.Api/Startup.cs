@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,6 +17,7 @@ using ProjectReceitas.Domain.Interface;
 using ProjectReceitas.Domain.Interfaces;
 using ProjectReceitas.Service.Service;
 using ProjectReceitas.Service.Service.Interface;
+using Swashbuckle.AspNetCore.Swagger;
 
 
 namespace ProjectReceitas.Api
@@ -47,21 +51,21 @@ namespace ProjectReceitas.Api
                         };
                     });
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new Info
-            //    {
-            //        Version = "v1",
-            //        Title = "API",
-            //        Description = "ProjectReceitas Api",
-            //        TermsOfService = "None",
-            //    });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "API",
+                    Description = "ProjectReceitas Api",
+                    TermsOfService = "None",
+                });
 
-            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    c.IncludeXmlComments(xmlPath);
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
 
-            //});
+            });
 
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
@@ -69,6 +73,7 @@ namespace ProjectReceitas.Api
             services.AddTransient<IReceitaRepository, ReceitaRepository>();
             services.AddSingleton<JwtService>();
 
+            services.AddCors();
         }
 
 
@@ -86,14 +91,20 @@ namespace ProjectReceitas.Api
                 app.UseHsts();
             }
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProjectReceitas API V1");
-            //});
+           
 
             app.UseAuthentication();
             app.UseMvc();
+
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProjectReceitas API V1");
+            });
+
+            app.UseCors(option => option.AllowAnyOrigin());
         }
+
     }
 }

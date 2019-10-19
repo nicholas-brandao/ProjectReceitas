@@ -34,9 +34,10 @@ namespace ProjectReceitas.Api.Controllers
         /// </summary>
         /// <returns>HttpResponseMessage</returns>
         [HttpPost, AllowAnonymous]
-        [Consumes(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("SignIn")]
+        //[Consumes(MediaTypeNames.Application.Json)]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult SignIn([FromBody]UserLogin user)
         {
             try
@@ -53,11 +54,8 @@ namespace ProjectReceitas.Api.Controllers
                 if (!retorno)
                     return Unauthorized(new { message = "Usuário ou senha inválidos" });
 
-                return CreatedAtAction(
-                        actionName: "token",
-                        routeValues: new { token = jwt.AutenticarUsuarioJwt(user) },
-                        value: jwt.AutenticarUsuarioJwt(user)
-                        );
+
+                return Ok(jwt.AutenticarUsuarioJwt(user));
             }
             catch (Exception ex)
             {
@@ -65,12 +63,5 @@ namespace ProjectReceitas.Api.Controllers
             }
         }
 
-        [HttpGet]
-        //[Authorize]
-        [Route("Teste")]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2", "value3", "value4", "value5" };
-        }
     }
 }

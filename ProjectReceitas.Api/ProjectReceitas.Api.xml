@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectReceitas.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ProjectReceitas.Api.Controllers.LoginController.SignIn(ProjectReceitas.Api.Model.UserLogin)">
+            <summary>
+            Efetua o Login
+            </summary>
+            <returns>HttpResponseMessage</returns>
+        </member>
+    </members>
+</doc>
