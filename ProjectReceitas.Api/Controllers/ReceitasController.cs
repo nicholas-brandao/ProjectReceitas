@@ -16,93 +16,93 @@ namespace ProjectReceitas.Api.Controllers
     [ApiController]
     public class ReceitasController : ControllerBase
     {
-    //    private readonly IReceitaService receitaService;
+        //    private readonly IReceitaService receitaService;
 
-    //    public ReceitasController(IReceitaService service)
-    //    {
-    //        receitaService = service;
-    //    }
+        //    public ReceitasController(IReceitaService service)
+        //    {
+        //        receitaService = service;
+        //    }
 
-    //    // GET: api/Receitas
-    //    [HttpGet]
-    //    public ActionResult<IEnumerable<Receita>> GetReceita()
-    //    {
-    //        return receitaService.ObterTodos();
-    //    }
+        //    // GET: api/Receitas
+        //    [HttpGet]
+        //    public ActionResult<IEnumerable<Receita>> GetReceita()
+        //    {
+        //        return receitaService.ObterTodos();
+        //    }
 
-    //    // GET: api/Receitas/5
-    //    [HttpGet("{id}")]
-    //    public async Task<ActionResult<Receita>> GetReceita(int id)
-    //    {
-    //        var receita = await _context.Receita.FindAsync(id);
+        //    // GET: api/Receitas/5
+        //    [HttpGet("{id}")]
+        //    public async Task<ActionResult<Receita>> GetReceita(int id)
+        //    {
+        //        var receita = await _context.Receita.FindAsync(id);
 
-    //        if (receita == null)
-    //        {
-    //            return NotFound();
-    //        }
+        //        if (receita == null)
+        //        {
+        //            return NotFound();
+        //        }
 
-    //        return receita;
-    //    }
+        //        return receita;
+        //    }
 
-    //    // PUT: api/Receitas/5
-    //    [HttpPut("{id}")]
-    //    public async Task<IActionResult> PutReceita(int id, Receita receita)
-    //    {
-    //        if (id != receita.Id)
-    //        {
-    //            return BadRequest();
-    //        }
+        //    // PUT: api/Receitas/5
+        //    [HttpPut("{id}")]
+        //    public async Task<IActionResult> PutReceita(int id, Receita receita)
+        //    {
+        //        if (id != receita.Id)
+        //        {
+        //            return BadRequest();
+        //        }
 
-    //        _context.Entry(receita).State = EntityState.Modified;
+        //        _context.Entry(receita).State = EntityState.Modified;
 
-    //        try
-    //        {
-    //            await _context.SaveChangesAsync();
-    //        }
-    //        catch (DbUpdateConcurrencyException)
-    //        {
-    //            if (!ReceitaExists(id))
-    //            {
-    //                return NotFound();
-    //            }
-    //            else
-    //            {
-    //                throw;
-    //            }
-    //        }
+        //        try
+        //        {
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!ReceitaExists(id))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
 
-    //        return NoContent();
-    //    }
+        //        return NoContent();
+        //    }
 
-    //    // POST: api/Receitas
-    //    [HttpPost]
-    //    public async Task<ActionResult<Receita>> PostReceita(Receita receita)
-    //    {
-    //        _context.Receita.Add(receita);
-    //        await _context.SaveChangesAsync();
+        //    // POST: api/Receitas
+        //    [HttpPost]
+        //    public async Task<ActionResult<Receita>> PostReceita(Receita receita)
+        //    {
+        //        _context.Receita.Add(receita);
+        //        await _context.SaveChangesAsync();
 
-    //        return CreatedAtAction("GetReceita", new { id = receita.Id }, receita);
-    //    }
+        //        return CreatedAtAction("GetReceita", new { id = receita.Id }, receita);
+        //    }
 
-    //    // DELETE: api/Receitas/5
-    //    [HttpDelete("{id}")]
-    //    public async Task<ActionResult<Receita>> DeleteReceita(int id)
-    //    {
-    //        var receita = await _context.Receita.FindAsync(id);
-    //        if (receita == null)
-    //        {
-    //            return NotFound();
-    //        }
+        //    // DELETE: api/Receitas/5
+        //    [HttpDelete("{id}")]
+        //    public async Task<ActionResult<Receita>> DeleteReceita(int id)
+        //    {
+        //        var receita = await _context.Receita.FindAsync(id);
+        //        if (receita == null)
+        //        {
+        //            return NotFound();
+        //        }
 
-    //        _context.Receita.Remove(receita);
-    //        await _context.SaveChangesAsync();
+        //        _context.Receita.Remove(receita);
+        //        await _context.SaveChangesAsync();
 
-    //        return receita;
-    //    }
+        //        return receita;
+        //    }
 
-    //    private bool ReceitaExists(int id)
-    //    {
-    //        return _context.Receita.Any(e => e.Id == id);
-    //    }
-    //}
+        //    private bool ReceitaExists(int id)
+        //    {
+        //        return _context.Receita.Any(e => e.Id == id);
+        //    }
+    }
 }
