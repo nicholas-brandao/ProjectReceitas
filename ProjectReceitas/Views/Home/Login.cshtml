@@ -6,9 +6,9 @@
     <h1>@ViewData["Title"]</h1>
     <form>
         <div class="form-group">
-            <label for="txtEmail">Endereço de Email</label>
-            <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Email">
-            <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com mais ninguém.</small>
+            <label for="txtNome">Nome</label>
+            <input type="text" class="form-control" id="txtNome" placeholder="Seu nome">
+            <small id="nomeHelp" class="form-text text-muted">Nunca compartilharemos suas informações com mais ninguém.</small>
         </div>
         <div class="form-group">
             <label for="txtSenha">Senha</label>
@@ -24,6 +24,7 @@
 
 @section Scripts
 {
+    <script src="~/js/layout.js"></script>
     <script src="~/js/Login/index.js"></script>
 }
 

@@ -21,11 +21,11 @@
         }
     });
 }
-function postData(url, data, fnRetorno, async, errMessage) {
+function postData(url, data, fnRetorno, async, err) {
     $.ajax({
         url: url,
         type: "POST",
-        dataType: "json",
+        //dataType: "json",
         contentType: "application/json",
         async: async != undefined ? async : false,
         cache: false,
@@ -45,7 +45,8 @@ function postData(url, data, fnRetorno, async, errMessage) {
             $.unblockUI();
         },
         error: function (errMessage) {
-            console.log(errMessage);
+            if (typeof (err) == "function")
+                err(errMessage);
         }
     });
 }
