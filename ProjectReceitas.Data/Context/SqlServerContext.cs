@@ -9,7 +9,10 @@ namespace ProjectReceitas.Data.Context
 {
     public class SqlServerContext : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Receita> Receita { get; set; }
+        public DbSet<ReceitaIngrediente> ReceitaIngrediente { get; set; }
+        public DbSet<ReceitaModoPreparo> ReceitaModoPreparo { get; set; }
 
         public SqlServerContext(DbContextOptions options)
             : base(options)

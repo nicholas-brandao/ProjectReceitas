@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using ProjectReceitas.Api.Security;
 using ProjectReceitas.Data.Context;
 using ProjectReceitas.Data.Repository;
+using ProjectReceitas.Domain.Interface;
 using ProjectReceitas.Domain.Interfaces;
 using ProjectReceitas.Service.Service;
 using ProjectReceitas.Service.Service.Interface;
@@ -28,7 +29,7 @@ namespace ProjectReceitas.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(Configuration["ConnectionString:ProjectReceitasBd"])); ;
+            services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(Configuration["ConnectionString:ProjectReceitasBd"], b => b.MigrationsAssembly("ProjectReceitas.Api")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -64,6 +65,8 @@ namespace ProjectReceitas.Api
 
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IReceitaService, ReceitaService>();
+            services.AddTransient<IReceitaRepository, ReceitaRepository>();
             services.AddSingleton<JwtService>();
 
         }
