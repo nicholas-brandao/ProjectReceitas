@@ -8,7 +8,7 @@ Receita.Login = {
     },
     logar: function () {
 
-        var user = $("#txtEmail").val();
+        var user = $("#txtNome").val();
         var password = $("#txtSenha").val();
 
         var _data = {
@@ -16,12 +16,15 @@ Receita.Login = {
             "Password": password
         };
 
-        var _url = 'http://localhost:53749/api/SignIn';
+        var _url = 'http://localhost:53749/api/Login/SignIn';
         postData(_url, _data, function (result) {
             var retorno = result;
             if (retorno !== null) {
-                localStorage.setItem("jwtToken", retorno.token);
+                localStorage.setItem("jwtToken", retorno);
             }
+        }, false, function (err) {
+            var e = JSON.parse(err.responseText);
+           $.toast(e.message);
         });
     },
 };
