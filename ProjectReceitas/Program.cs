@@ -12,6 +12,8 @@ namespace ProjectReceitas
 {
     public class Program
     {
+        public static string gToken = "";
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();

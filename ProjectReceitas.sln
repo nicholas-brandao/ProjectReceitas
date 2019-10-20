@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReceitas", "ProjectReceitas\ProjectReceitas.csproj", "{E3E1EAE6-4BFE-46F3-839E-E1C1DE2770DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectReceitas", "ProjectReceitas\ProjectReceitas.csproj", "{E3E1EAE6-4BFE-46F3-839E-E1C1DE2770DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReceitas.Api", "ProjectReceitas.Api\ProjectReceitas.Api.csproj", "{4566F5A3-68B2-4743-AC57-7520169B4A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectReceitas.Api", "ProjectReceitas.Api\ProjectReceitas.Api.csproj", "{4566F5A3-68B2-4743-AC57-7520169B4A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReceitas.Domain", "ProjectReceitas.Domain\ProjectReceitas.Domain.csproj", "{21FB6F70-A065-4007-9423-1D0C69E11664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectReceitas.Domain", "ProjectReceitas.Domain\ProjectReceitas.Domain.csproj", "{21FB6F70-A065-4007-9423-1D0C69E11664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReceitas.Service", "ProjectReceitas.Service\ProjectReceitas.Service.csproj", "{020391A3-79D1-43A0-9442-D1AA8B93E911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectReceitas.Service", "ProjectReceitas.Service\ProjectReceitas.Service.csproj", "{020391A3-79D1-43A0-9442-D1AA8B93E911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReceitas.Data", "ProjectReceitas.Data\ProjectReceitas.Data.csproj", "{01B2C1BE-090D-4035-9749-6ABB79E9F82F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectReceitas.Data", "ProjectReceitas.Data\ProjectReceitas.Data.csproj", "{01B2C1BE-090D-4035-9749-6ABB79E9F82F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
