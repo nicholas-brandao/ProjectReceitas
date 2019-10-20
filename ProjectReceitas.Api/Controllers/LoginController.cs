@@ -54,7 +54,6 @@ namespace ProjectReceitas.Api.Controllers
                 if (!retorno)
                     return Unauthorized(new { message = "Usuário ou senha inválidos" });
 
-
                 return Ok(jwt.AutenticarUsuarioJwt(user));
             }
             catch (Exception ex)

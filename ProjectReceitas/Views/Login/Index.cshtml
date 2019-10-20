@@ -1,0 +1,21 @@
+﻿@model ProjectReceitas.Models.UserLogin
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="col-md-6">
+    <h1>@ViewData["Title"]</h1>
+    <form asp-action="Login">
+        <div class="form-group">
+            <label for="txtNome">Nome</label>
+            <input type="text" class="form-control" id="txtNome" name="User" placeholder="Seu nome">
+            <small id="nomeHelp" class="form-text text-muted">Nunca compartilharemos suas informações com mais ninguém.</small>
+        </div>
+        <div class="form-group">
+            <label for="txtSenha">Senha</label>
+            <input type="password" class="form-control" id="txtSenha" name="Password" placeholder="Senha">
+        </div>
+        <button type="submit" id="btnEntrar" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
