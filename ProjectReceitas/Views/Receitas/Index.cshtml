@@ -43,8 +43,8 @@
                 @Html.DisplayFor(modelItem => item.Rendimento)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Ingredientes</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Modos Preparo</a> |
+                <a href="Ingredientes/Listar/@item.Id"> Ingredientes </a> |
+                <a href="Preparos/Listar/@item.Id"> Modos Preparo </a> |
 
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |

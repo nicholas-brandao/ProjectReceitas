@@ -72,8 +72,16 @@ namespace ProjectReceitas.Api
 
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+
             services.AddTransient<IReceitaService, ReceitaService>();
             services.AddTransient<IReceitaRepository, ReceitaRepository>();
+
+            services.AddTransient<IIngredienteService, IngredienteService>();
+            services.AddTransient<IIngredienteRepository, IngredienteRepository>();
+
+            services.AddTransient<IPreparoService, PreparoService>();
+            services.AddTransient<IPreparoRepository, PreparoRepository>();
+
             services.AddSingleton<JwtService>();
 
             services.AddCors();
