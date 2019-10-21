@@ -30,6 +30,7 @@ namespace ProjectReceitas.Controllers
             {
                 string json = await retorno.Content.ReadAsStringAsync();
                 List<ReceitaIngrediente> ingredientes = JsonConvert.DeserializeObject<List<ReceitaIngrediente>>(json);
+                ViewBag.ReceitaId = id;
                 return View(ingredientes);
             }
 
@@ -52,9 +53,9 @@ namespace ProjectReceitas.Controllers
             return StatusResult(retorno);
         }
 
-        public IActionResult Create()
+        public IActionResult Create(int Id)
         {
-            return View();
+            return View(new ReceitaIngrediente() { ReceitaId = Id });
         }
 
         [HttpPost]
